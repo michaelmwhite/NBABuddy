@@ -20,10 +20,10 @@ class HomeActivity : AppCompatActivity() {
         val nbaService = retrofit.create(NBAApi::class.java)
 
         Thread {
-            val response = nbaService.listGames().execute()
+            val response = nbaService.getScoreboard(16, 10, 2019).execute()
             if (response.isSuccessful) {
                 response.body()?.games?.map {
-                    Log.d("HomeActivity.kt", it.gameId)
+                    Log.d(this.javaClass.simpleName, it.hTeam.triCode + " vs " + it.vTeam.triCode)
                 }
             }
         }.start()

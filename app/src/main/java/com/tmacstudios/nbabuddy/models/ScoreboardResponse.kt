@@ -1,5 +1,5 @@
 package com.tmacstudios.nbabuddy.models
 
-class ScoreboardResponse (
+class ScoreboardResponse(
     val games: List<Game>
 )

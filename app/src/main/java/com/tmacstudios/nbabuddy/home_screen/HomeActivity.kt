@@ -1,5 +1,6 @@
 package com.tmacstudios.nbabuddy.home_screen
 
+import android.icu.util.Calendar
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -41,11 +42,16 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private suspend fun loadGames(): List<Game> {
+        val calendar = Calendar.getInstance()
         val retrofit = Retrofit.Builder().baseUrl("http://data.nba.net/10s/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         val nbaService = retrofit.create(NBAApi::class.java)
-        val response = nbaService.getScoreboard(16, 10, 2019)
+        val response = nbaService.getScoreboard(
+            String.format("%02d", calendar.get(Calendar.DAY_OF_MONTH)),
+            String.format("%02d", calendar.get(Calendar.MONTH) + 1),
+            String.format("%04d", calendar.get(Calendar.YEAR))
+        )
         if (response.isSuccessful) {
             response.body()?.games?.map {
                 Log.d(this.javaClass.simpleName, it.hTeam.triCode + " vs " + it.vTeam.triCode)

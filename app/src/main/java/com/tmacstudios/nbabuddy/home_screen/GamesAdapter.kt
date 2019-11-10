@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.tmacstudios.nbabuddy.R
 import com.tmacstudios.nbabuddy.models.Game
+import com.tmacstudios.nbabuddy.utils.getQuarterTime
 import com.tmacstudios.nbabuddy.utils.getScoreOrTime
 import com.tmacstudios.nbabuddy.views.TeamInfoView
 
@@ -20,7 +21,8 @@ class GamesAdapter : RecyclerView.Adapter<GamesAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val game = games[position]
-        holder.textView.text = getScoreOrTime(game)
+        holder.scoreTextView.text = getScoreOrTime(game)
+        holder.quarterTextView.text = getQuarterTime(game)
         holder.hTeamInfo.setTeam(game.hTeam)
         holder.vTeamInfo.setTeam(game.vTeam)
     }
@@ -33,7 +35,8 @@ class GamesAdapter : RecyclerView.Adapter<GamesAdapter.ViewHolder>() {
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var textView: TextView = view.findViewById(R.id.game_cell_score)
+        var scoreTextView: TextView = view.findViewById(R.id.game_cell_score)
+        var quarterTextView: TextView = view.findViewById(R.id.game_cell_quarter)
         var hTeamInfo: TeamInfoView = view.findViewById(R.id.h_team_info)
         var vTeamInfo: TeamInfoView = view.findViewById(R.id.v_team_info)
     }

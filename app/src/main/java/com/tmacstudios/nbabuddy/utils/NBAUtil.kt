@@ -43,3 +43,13 @@ fun getScoreOrTime(game: Game): String {
     }
     return convertUTC(gameDate)
 }
+
+fun getQuarterTime(game: Game): String {
+    val gameDate = parseUTC(game.startTimeUTC)
+    if (Date().after(gameDate) && !game.isGameActivated) {
+        return "Final"
+    } else if (Date().after(gameDate)) {
+        return String.format("Q%s  %s", game.period.current, game.clock)
+    }
+    return ""
+}

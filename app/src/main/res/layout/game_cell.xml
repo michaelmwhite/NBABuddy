@@ -9,7 +9,7 @@
         android:id="@+id/h_team_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintRight_toLeftOf="@id/game_cell_score"
+        app:layout_constraintEnd_toStartOf="@id/game_cell_score"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -22,11 +22,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/game_cell_quarter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/quarter_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/game_cell_score" />
+
     <com.tmacstudios.nbabuddy.views.TeamInfoView
         android:id="@+id/v_team_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toRightOf="@id/game_cell_score"
+        app:layout_constraintStart_toEndOf="@id/game_cell_score"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,8 @@
 package com.tmacstudios.nbabuddy.utils
 
+import com.tmacstudios.nbabuddy.models.Game
+import java.util.*
+
 val teamNames = mapOf(
     "ATL" to "Atlanta Hawks",
     "BKN" to "Brooklyn Nets",
@@ -32,3 +35,11 @@ val teamNames = mapOf(
     "UTA" to "Utah Jazz",
     "WAS" to "Washington Wizards"
 )
+
+fun getScoreOrTime(game: Game): String {
+    val gameDate = parseUTC(game.startTimeUTC)
+    if (Date().after(gameDate)) {
+        return String.format("%s - %s", game.hTeam.score, game.vTeam.score)
+    }
+    return convertUTC(gameDate)
+}

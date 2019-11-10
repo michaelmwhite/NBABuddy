@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.tmacstudios.nbabuddy.R
 import com.tmacstudios.nbabuddy.models.Game
+import com.tmacstudios.nbabuddy.utils.getScoreOrTime
 import com.tmacstudios.nbabuddy.views.TeamInfoView
 
 class GamesAdapter : RecyclerView.Adapter<GamesAdapter.ViewHolder>() {
@@ -19,7 +20,7 @@ class GamesAdapter : RecyclerView.Adapter<GamesAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val game = games[position]
-        holder.textView.text = String.format("%s - %s", game.hTeam.score, game.vTeam.score)
+        holder.textView.text = getScoreOrTime(game)
         holder.hTeamInfo.setTeam(game.hTeam)
         holder.vTeamInfo.setTeam(game.vTeam)
     }

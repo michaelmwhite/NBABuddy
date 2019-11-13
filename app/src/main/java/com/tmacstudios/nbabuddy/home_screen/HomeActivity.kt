@@ -3,6 +3,7 @@ package com.tmacstudios.nbabuddy.home_screen
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -69,9 +70,19 @@ class HomeActivity : AppCompatActivity() {
 
     private fun updateGames(calendar: Calendar) {
         GlobalScope.launch {
-            val games = loadGames(calendar)
-            withContext(Dispatchers.Main) {
-                gamesAdapter.updateGames(games)
+            try {
+                val games = loadGames(calendar)
+                withContext(Dispatchers.Main) {
+                    gamesAdapter.updateGames(games)
+                }
+            } catch (e: Exception) {
+                withContext((Dispatchers.Main)) {
+                    Toast.makeText(
+                        this@HomeActivity,
+                        "Unable to connect to internet",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
             }
         }
     }

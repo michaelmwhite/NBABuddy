@@ -25,6 +25,7 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var gamesAdapter: GamesAdapter
     private lateinit var viewManager: RecyclerView.LayoutManager
     private lateinit var dateTextView: TextView
+    private lateinit var emptyTextView: TextView
     private lateinit var calendarViewModel: CalendarViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,6 +47,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         dateTextView = findViewById(R.id.date_text_view)
+        emptyTextView = findViewById(R.id.empty_text_view)
 
         calendarViewModel = ViewModelProviders.of(this).get(CalendarViewModel::class.java)
         val dateObserver = Observer<Calendar> { calendar ->
@@ -74,6 +76,7 @@ class HomeActivity : AppCompatActivity() {
                 val games = loadGames(calendar)
                 withContext(Dispatchers.Main) {
                     gamesAdapter.updateGames(games)
+                    updateVisibility()
                 }
             } catch (e: Exception) {
                 withContext((Dispatchers.Main)) {
@@ -84,6 +87,16 @@ class HomeActivity : AppCompatActivity() {
                     ).show()
                 }
             }
+        }
+    }
+
+    private fun updateVisibility() {
+        if (gamesAdapter.itemCount == 0) {
+            recyclerView.visibility = View.GONE
+            emptyTextView.visibility = View.VISIBLE
+        } else {
+            recyclerView.visibility = View.VISIBLE
+            emptyTextView.visibility = View.GONE
         }
     }
 }

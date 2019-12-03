@@ -3,4 +3,5 @@
     <string name="default_date">Kobe 24, GOAT</string>
     <string name="default_team_name">Appalachian Kodiaks</string>
     <string name="default_team_record">4-20</string>
+    <string name="empty_games_text">There are no games today.</string>
 </resources>

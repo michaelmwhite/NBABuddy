@@ -1,5 +1,6 @@
 package com.tmacstudios.nbabuddy.retrofit_apis
 
+import com.tmacstudios.nbabuddy.models.Boxscore
 import com.tmacstudios.nbabuddy.models.Scoreboard
 import retrofit2.Response
 import retrofit2.http.GET
@@ -14,4 +15,10 @@ interface NBAApi {
         @Path("month") month: String,
         @Path("year") year: String
     ): Response<Scoreboard>
+
+    @GET("prod/v1/{date}/{gameId}_boxscore.json")
+    suspend fun getBoxscore(
+        @Path("date") date: String,
+        @Path("gameId") gameId: String
+    ): Response<Boxscore>
 }

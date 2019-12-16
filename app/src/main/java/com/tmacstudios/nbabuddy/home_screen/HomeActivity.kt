@@ -73,7 +73,7 @@ class HomeActivity : AppCompatActivity() {
     private fun updateGames(calendar: Calendar) {
         GlobalScope.launch {
             try {
-                val games = loadGames(calendar)
+                val games = loadGames(calendar)!!
                 withContext(Dispatchers.Main) {
                     gamesAdapter.updateGames(games)
                     updateVisibility()

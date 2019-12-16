@@ -25,6 +25,9 @@ class GamesAdapter : RecyclerView.Adapter<GamesAdapter.ViewHolder>() {
         holder.quarterTextView.text = getQuarterTime(game)
         holder.hTeamInfo.setTeam(game.hTeam)
         holder.vTeamInfo.setTeam(game.vTeam)
+
+        val clickListener = GameClickListener(game)
+        holder.itemView.setOnClickListener(clickListener)
     }
 
     override fun getItemCount() = games.size

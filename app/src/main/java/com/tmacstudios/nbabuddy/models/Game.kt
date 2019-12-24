@@ -1,6 +1,8 @@
 package com.tmacstudios.nbabuddy.models
 
-class Game(
+import java.io.Serializable
+
+data class Game(
     val gameId: String,
     val clock: String,
     val hTeam: Team,
@@ -9,4 +11,4 @@ class Game(
     val startTimeUTC: String,
     val startDateEastern: String,
     val vTeam: Team
-)
+) : Serializable

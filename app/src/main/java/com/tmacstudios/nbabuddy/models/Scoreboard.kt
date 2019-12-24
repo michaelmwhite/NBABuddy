@@ -1,5 +1,7 @@
 package com.tmacstudios.nbabuddy.models
 
-class Scoreboard(
+import java.io.Serializable
+
+data class Scoreboard(
     val games: List<Game>
-)
+) : Serializable

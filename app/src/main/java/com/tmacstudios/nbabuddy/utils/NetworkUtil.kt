@@ -1,7 +1,7 @@
 package com.tmacstudios.nbabuddy.utils
 
+import com.tmacstudios.nbabuddy.models.Boxscore
 import com.tmacstudios.nbabuddy.models.Game
-import com.tmacstudios.nbabuddy.models.Stats
 import com.tmacstudios.nbabuddy.retrofit_apis.NBAApi
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -25,13 +25,13 @@ suspend fun loadGames(calendar: Calendar): List<Game>? {
     return null
 }
 
-suspend fun loadBoxscore(game: Game): Stats? {
+suspend fun loadBoxscore(game: Game): Boxscore? {
     val response = nbaService.getBoxscore(
         game.startDateEastern,
         game.gameId
     )
     if (response.isSuccessful) {
-        return response.body()!!.stats
+        return response.body()
     }
     return null
 }

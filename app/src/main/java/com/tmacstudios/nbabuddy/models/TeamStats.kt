@@ -1,5 +1,7 @@
 package com.tmacstudios.nbabuddy.models
 
-class TeamStats(
+import java.io.Serializable
+
+data class TeamStats(
     val totals: TotalsTeamStats
-)
+) : Serializable

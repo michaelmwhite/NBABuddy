@@ -6,4 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".stats_screen.StatsActivity">
 
+    <com.tmacstudios.nbabuddy.views.TeamInfoView
+        android:id="@+id/h_team_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/stats_header"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/stats_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/stats_header_padding"
+        android:text="@string/stats_header_text"
+        android:textSize="@dimen/large_text_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/h_team_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.tmacstudios.nbabuddy.views.TeamInfoView
+        android:id="@+id/v_team_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/stats_header"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

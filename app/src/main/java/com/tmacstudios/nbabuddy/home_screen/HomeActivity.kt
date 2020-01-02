@@ -55,19 +55,15 @@ class HomeActivity : AppCompatActivity() {
             dateTextView.text = formatDate(calendar)
         }
         calendarViewModel.calendar.observe(this, dateObserver)
-        calendarViewModel.calendar.value = Calendar.getInstance()
+        calendarViewModel.loadToday()
     }
 
     fun leftArrowClick(view: View) {
-        val calendar = calendarViewModel.calendar.value!!
-        calendar.add(Calendar.DATE, -1)
-        calendarViewModel.calendar.value = calendar
+        calendarViewModel.decreaseOneDay()
     }
 
     fun rightArrowClick(view: View) {
-        val calendar = calendarViewModel.calendar.value!!
-        calendar.add(Calendar.DATE, 1)
-        calendarViewModel.calendar.value = calendar
+        calendarViewModel.increaseOneDay()
     }
 
     private fun updateGames(calendar: Calendar) {

@@ -4,5 +4,4 @@
     <string name="default_team_name">Appalachian Kodiaks</string>
     <string name="default_team_record">4-20</string>
     <string name="empty_games_text">There are no games today.</string>
-    <string name="stats_header_text">STATS</string>
 </resources>

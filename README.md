@@ -1,8 +1,8 @@
 # NBABuddy
 
-An app designed for NBA fans.
+An app that lets you check scores and stats for your favorite NBA games.
 
-## Useful links
+## Useful development links
 
 [Retrofit](https://square.github.io/retrofit/)
 

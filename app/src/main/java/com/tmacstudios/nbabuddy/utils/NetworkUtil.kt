@@ -1,7 +1,7 @@
 package com.tmacstudios.nbabuddy.utils
 
-import com.tmacstudios.nbabuddy.models.Boxscore
-import com.tmacstudios.nbabuddy.models.Game
+import com.tmacstudios.nbabuddy.models.api_models.Boxscore
+import com.tmacstudios.nbabuddy.models.api_models.Game
 import com.tmacstudios.nbabuddy.retrofit_apis.NBAApi
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.tmacstudios.nbabuddy.R
-import com.tmacstudios.nbabuddy.models.Game
+import com.tmacstudios.nbabuddy.models.api_models.Game
 import com.tmacstudios.nbabuddy.utils.getQuarterTime
 import com.tmacstudios.nbabuddy.utils.getScoreOrTime
 import com.tmacstudios.nbabuddy.views.TeamInfoView

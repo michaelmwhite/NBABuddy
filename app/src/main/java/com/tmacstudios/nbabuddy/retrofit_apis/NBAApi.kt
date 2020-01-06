@@ -1,7 +1,7 @@
 package com.tmacstudios.nbabuddy.retrofit_apis
 
-import com.tmacstudios.nbabuddy.models.Boxscore
-import com.tmacstudios.nbabuddy.models.Scoreboard
+import com.tmacstudios.nbabuddy.models.api_models.Boxscore
+import com.tmacstudios.nbabuddy.models.api_models.Scoreboard
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

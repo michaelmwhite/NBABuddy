@@ -10,4 +10,9 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="StatsTextView">
+        <item name="android:textSize">@dimen/large_text_size</item>
+        <item name="android:gravity">center</item>
+    </style>
+
 </resources>

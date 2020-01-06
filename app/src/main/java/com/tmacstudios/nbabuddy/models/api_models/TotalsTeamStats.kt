@@ -1,4 +1,4 @@
-package com.tmacstudios.nbabuddy.models
+package com.tmacstudios.nbabuddy.models.api_models
 
 import java.io.Serializable
 

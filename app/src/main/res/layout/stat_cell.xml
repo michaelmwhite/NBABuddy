@@ -6,13 +6,29 @@
     android:padding="@dimen/stats_cell_padding">
 
     <TextView
-        android:id="@+id/stat_text_view"
+        android:id="@+id/stat_h_team"
+        style="@style/StatsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/large_text_size"
+        app:layout_constraintEnd_toStartOf="@id/stat_category"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/stat_category"
+        style="@style/StatsTextView"
+        android:layout_width="@dimen/stat_category_width"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/stat_v_team"
+        style="@style/StatsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/stat_category"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

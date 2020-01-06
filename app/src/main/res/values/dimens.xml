@@ -8,8 +8,10 @@
     <dimen name="game_cell_padding">12dp</dimen>
     <dimen name="logo_height">80dp</dimen>
     <dimen name="logo_width">80dp</dimen>
-    <dimen name="stats_header_padding">16dp</dimen>
     <dimen name="stats_cell_padding">4dp</dimen>
+    <dimen name="stats_margin_top">8dp</dimen>
+    <dimen name="stats_header_padding">16dp</dimen>
+    <dimen name="stat_category_width">140dp</dimen>
     <dimen name="team_info_width">140dp</dimen>
 
     <dimen name="large_text_size">24sp</dimen>

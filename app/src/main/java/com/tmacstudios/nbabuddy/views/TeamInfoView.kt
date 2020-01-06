@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.tmacstudios.nbabuddy.R
-import com.tmacstudios.nbabuddy.models.Team
+import com.tmacstudios.nbabuddy.models.api_models.Team
 import com.tmacstudios.nbabuddy.utils.teamNames
 
 class TeamInfoView(context: Context, attrs: AttributeSet) : FrameLayout(context, attrs) {

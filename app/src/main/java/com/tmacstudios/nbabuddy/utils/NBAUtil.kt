@@ -1,6 +1,6 @@
 package com.tmacstudios.nbabuddy.utils
 
-import com.tmacstudios.nbabuddy.models.Game
+import com.tmacstudios.nbabuddy.models.api_models.Game
 import java.util.*
 
 val teamNames = mapOf(

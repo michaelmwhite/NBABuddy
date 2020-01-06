@@ -7,12 +7,10 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.tmacstudios.nbabuddy.R
-import com.tmacstudios.nbabuddy.models.Boxscore
-import com.tmacstudios.nbabuddy.models.Game
+import com.tmacstudios.nbabuddy.models.api_models.Boxscore
+import com.tmacstudios.nbabuddy.models.api_models.Game
 import com.tmacstudios.nbabuddy.view_models.BoxscoreViewModel
 import com.tmacstudios.nbabuddy.views.TeamInfoView
-
-const val EXTRA_GAME = "GAME"
 
 class StatsActivity : AppCompatActivity() {
     private lateinit var hTeamInfoView: TeamInfoView
@@ -21,6 +19,10 @@ class StatsActivity : AppCompatActivity() {
     private lateinit var statsAdapter: StatsAdapter
     private lateinit var viewManager: RecyclerView.LayoutManager
     private lateinit var boxscoreViewModel: BoxscoreViewModel
+
+    companion object {
+        const val EXTRA_GAME = "GAME"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +44,7 @@ class StatsActivity : AppCompatActivity() {
         vTeamInfoView.setTeam(game.vTeam)
 
         val boxscoreObserver = Observer<Boxscore> { boxscore ->
-            statsAdapter.updateStats(boxscoreViewModel.getStatsList())
+            statsAdapter.updateStats(boxscoreViewModel.getStatPairs())
         }
         boxscoreViewModel.boxscore.observe(this, boxscoreObserver)
         boxscoreViewModel.retrieveBoxscore(game, this)
